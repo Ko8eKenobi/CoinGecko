@@ -1,54 +1,101 @@
-# CoinGecko
+# 🦎 CoinGecko iOS App
 
-**CoinGecko** is an iOS application that fetches cryptocurrency market data from the CoinGecko API and displays it in a clean and responsive UIKit interface.
+An iOS application that displays cryptocurrency market data using the **CoinGecko API**.
 
-The project focuses on networking, data mapping, caching, and a scalable UIKit architecture suitable for real-world applications.
+The project focuses on clean architecture, modern UIKit APIs, and real-world iOS development patterns such as networking, caching, and performance-aware UI updates.
 
-## Features
-- Fetch cryptocurrency market data from the CoinGecko API
-- Display a list of coins with prices and market metrics
-- Load and display coin icons asynchronously
-- Handle loading and error states
-- Local in-memory caching to reduce network usage
-- Modular architecture with clear separation of responsibilities
-- Unit tests for core business logic
+---
 
-## Architecture
-The app is built using a modular UIKit architecture with explicit layers:
+## ✨ Features
 
-- **Presentation layer**  
-  ViewControllers and Views responsible for UI rendering and user interaction
+- 📈 Cryptocurrency list with live prices
+- 📊 Detailed coin screen with 7-day sparkline price chart
+- 🔄 Pull-to-refresh support
+- 🗂 Diffable Data Source for smooth UI updates
+- 💾 Caching layer to reduce network requests
+- 🌐 Async/Await networking
+- 🎨 UIKit-based UI with Auto Layout
+- 🧱 Clean architecture & separation of concerns
 
-- **Business layer**  
-  Presenters and Services encapsulating application logic
+---
 
-- **Data layer**  
-  Network services and models responsible for API communication and data mapping
+## 🛠 Tech Stack
 
-This separation improves testability, maintainability, and scalability.
-
-## Tech Stack
 - Swift
 - UIKit
+- Async / Await
+- UICollectionViewDiffableDataSource
 - URLSession
-- Auto Layout
-- XCTest
-- SwiftLint / SwiftFormat
+- URLCache / in-memory caching
+- Dependency Injection
+- Kingfisher (image loading)
 - CoinGecko Public API
 
-## Requirements
-- iOS 15+
-- Xcode 15+
+---
 
-## Project Goals
-This project was created to demonstrate practical iOS development skills, including:
-- Working with REST APIs
-- Async data loading and error handling
-- UIKit-based UI composition
-- Clean architecture and code organization
-- Writing testable and maintainable code
+## 🧩 Architecture
 
-The application is intended as a technical showcase rather than a production trading tool.
+The project follows a layered architecture inspired by **Clean Architecture** principles:
 
-## Screenshots
-_Add screenshots here_
+- **Presentation** — ViewControllers, Views, UI logic
+- **Domain** — Models, use cases, protocols
+- **Data** — Network services and caching implementations
+- **Infrastructure** — Configuration, shared services, secrets handling
+
+This structure keeps business logic independent from UI and external frameworks, improving testability and long-term maintainability.
+
+---
+
+## 🚀 Getting Started
+
+1. Clone the repository
+2. Add `COINGECKO_API_KEY` to `Info.plist`
+3. Open the project in Xcode
+4. Run on an iOS 15+ simulator or device
+
+---
+
+## 🔐 API Key Handling
+
+The CoinGecko API key is **not hardcoded**.
+
+It is stored in `Info.plist` and accessed through a dedicated configuration layer:
+
+```swift
+Secrets.coinGeckoAPIKey
+```
+## 📌 Notes
+
+This project was created as a **portfolio showcase** to demonstrate:
+
+- modern UIKit development
+- async/await concurrency
+- clean architectural boundaries
+- networking and caching strategies
+- performance-aware UI updates
+
+The application is not intended to be a production trading tool.
+
+---
+
+## 📷 Screenshots
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="Screenshots/ListView.png" width="300"><br>
+      <b>Coins List view</b>
+    </td>
+    <td align="center">
+      <img src="Screenshots/DetailsView.png" width="300"><br>
+      <b>Coin Details view</b>
+    </td>
+  </tr>
+</table>
+
+---
+
+## 👤 Author
+
+Developed by **Denis**  
+iOS Developer · Swift · UIKit
