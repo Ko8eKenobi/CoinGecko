@@ -18,7 +18,9 @@ final class ListRouter: ListRouterProtocol {
         self.alertFactory = alertFactory
     }
 
-    func setRootViewController(_ rootController: UIViewController) { self.rootController = rootController }
+    func setRootViewController(_ rootController: UIViewController) {
+        self.rootController = rootController
+    }
 
     func openCoinDetails(with coin: CoinModel) {
         let context = CoinDetailsFactory.Context(coin: coin)

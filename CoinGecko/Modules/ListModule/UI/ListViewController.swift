@@ -17,7 +17,9 @@ final class ListViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
 
-    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,12 +61,16 @@ extension ListViewController: ListViewProtocol {
 // MARK: TableView
 extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     // Cells quantity
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { coins.count }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        coins.count
+    }
 
     // Cell configuration
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CoinCell", for: indexPath) as? ListCoinTableViewCell
-        else { return UITableViewCell() }
+        else {
+            return UITableViewCell()
+        }
         let coin = coins[indexPath.row]
         cell.configure(coin: coin)
         cell.backgroundColor = .systemBackground

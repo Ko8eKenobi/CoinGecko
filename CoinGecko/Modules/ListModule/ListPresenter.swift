@@ -30,7 +30,9 @@ final class ListPresenter: ListPresenterProtocol {
     }
 
     func loadData() async {
-        await MainActor.run { view?.showLoading(true) }
+        await MainActor.run {
+            view?.showLoading(true)
+        }
         defer {
             Task {
                 @MainActor in

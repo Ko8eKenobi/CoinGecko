@@ -62,7 +62,9 @@ final class CacheService: CacheServiceProtocol {
     func isRelevant(cacheKey: NSString, timeInterval: TimeInterval) throws -> Bool {
         let decoder = JSONDecoder()
 
-        guard let nsData = cache.object(forKey: cacheKey) else { return false }
+        guard let nsData = cache.object(forKey: cacheKey) else {
+            return false
+        }
 
         do {
             let date = try decoder.decode(Date.self, from: nsData as Data)
